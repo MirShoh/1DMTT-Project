@@ -1,0 +1,517 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-primary-main px-0 px-md-5 mb-5"
+     style="background: rgba(54, 148, 192, 1) url({% static 'img/main1.jpg' %}) !important; background-size: cover!important; background-repeat: no-repeat!important; background-blend-mode: multiply;">
+    <div class="row align-items-center px-3">
+        <div class="col-lg-6 text-center text-lg-left wow animate__animated animate__backInLeft">
+            <h2 class="text-white mb-4 mt-5 mt-lg-0">Jizzax shahar maktabgacha ta'lim bo'limi tasarrufidagi</h2>
+            <h1 class="display-3 font-weight-bold text-white">1-DMTM </h1>
+            <p class="text-white mb-4">Bizning bolalar bog'chamiz juda chiroyli, qulay, ishonchli va zamonaviydir. <br>Siz
+                orzu qilgan deyarli hamma narsa mavjud.</p>
+            <a href="tel:+998991035505" class="btn btn-secondary mt-1 py-3 px-5">Batafsil</a>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <img class="img-fluid mt-5 wow animate__animated animate__backInRight" src="{% static 'img/header.png' %}"
+                 alt="">
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Facilities Start -->
+<div class="container-fluid pt-5">
+    <div class="container pb-3">
+        <div class="text-center pb-2">
+            <p class="section-title px-5 wow animate__animated animate__lightSpeedInLeft"><span class="px-2">Farzandingiz uchun</span>
+            </p>
+            <h1 class="mb-4 wow animate__animated animate__bounceIn">Mavjud to'garaklar</h1>
+        </div>
+        <div class="row">
+            {% for course in courses %}
+            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">
+                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 15px;">
+                    <!--                    <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>-->
+                    <img src="/media/{{ course.image }}" style="width: 80px; height: 80px">
+                    <div class="pl-4">
+                        <h4>{{ course.title}}</h4>
+                        <p class="m-0">{{ course.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!--            Xorijiy tillar (Ingliz va Rus tili)-->
+            <!--            Farzandingiz yetuk mutaxassis bo'lishi uchun chet tillarini hozirdanoq o'rgatamiz...-->
+            <!--            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">-->
+            <!--                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">-->
+            <!--                    <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>-->
+            <!--                    <div class="pl-4">-->
+            <!--                        <h4>Xorijiy tillar (Ingliz va Rus tili)</h4>-->
+            <!--                        <p class="m-0">Farzandingiz yetuk mutaxassis bo'lishi uchun chet tillarini hozirdanoq-->
+            <!--                            o'rgatamiz...</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">-->
+            <!--                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">-->
+            <!--                    <i class="flaticon-041-abacus h1 font-weight-normal text-primary mb-3"></i>-->
+            <!--                    <div class="pl-4">-->
+            <!--                        <h4>Mental arifmetika</h4>-->
+            <!--                        <p class="m-0">Bolajonlarning aqliy salohiyatini rivojlantirish uchun ushbu to'garak joriy-->
+            <!--                            etilgan...</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">-->
+            <!--                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">-->
+            <!--                    <i class="flaticon-040-puzzle h1 font-weight-normal text-primary mb-3"></i>-->
+            <!--                    <div class="pl-4">-->
+            <!--                        <h4>Shaxmat va shashka</h4>-->
+            <!--                        <p class="m-0">Bolajonlarning aqliy salohiyatini rivojlantirish uchun ushbu to'garak joriy-->
+            <!--                            etilgan...</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">-->
+            <!--                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">-->
+            <!--                    <i class="flaticon-039-seesaw h1 font-weight-normal text-primary mb-3"></i>-->
+            <!--                    <div class="pl-4">-->
+            <!--                        <h4>Badiiy gimnastika</h4>-->
+            <!--                        <p class="m-0">Bolajonlarni har tomonlama barkamol bo'lishi uchun ushbu sport to'garaklarini-->
+            <!--                            doimiy ravishda olib boramiz...</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">-->
+            <!--                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">-->
+            <!--                    <i class="flaticon-036-boy h1 font-weight-normal text-primary mb-3"></i>-->
+            <!--                    <div class="pl-4">-->
+            <!--                        <h4>Taekvando</h4>-->
+            <!--                        <p class="m-0">Bolajonlarni har tomonlama barkamol bo'lishi uchun ushbu sport to'garaklarini-->
+            <!--                            doimiy ravishda olib boramiz...</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="col-lg-4 col-md-6 pb-1 wow animate__animated animate__bounceIn">-->
+            <!--                <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">-->
+            <!--                    <i class="flaticon-023-girl h1 font-weight-normal text-primary mb-3"></i>-->
+            <!--                    <div class="pl-4">-->
+            <!--                        <h4>Mohir qo'llar</h4>-->
+            <!--                        <p class="m-0">Bolajonlarni har tomonlama barkamol bo'lishi uchun ushbu san'at to'garaklarini-->
+            <!--                            doimiy ravishda olib boramiz...</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+        </div>
+    </div>
+    <!-- Facilities Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-5 mb-lg-0 wow animate__animated animate__slideInLeft"
+                         src="{% static 'img/main1.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <p class="section-title pr-5 wow animate__animated animate__lightSpeedInRight"><span class="pr-2">Biz haqimizda</span>
+                    </p>
+                    <h1 class="mb-4 wow animate__animated animate__bounceIn">Bolalarga quvonch - ota-onalarga
+                        ishonch!</h1>
+                    <p class="wow animate__animated animate__slideInRight">Har bir guruh tarbiyachilari farzandingizning
+                        barkamol rivojlanishi uchun zarur bo'lgan barcha narsani biladilar va amalga oshiradilar. Ular
+                        ertaklarni o'qiydilar, qiziqarli darslar o'tkazadilar, qiziquvchan bolalarning barcha
+                        savollariga
+                        javob berishadi va bolangiz uchun faqat ijobiy va quvnoq kayfiyatni yaratadilar.</p>
+                    <div class="row pt-2 pb-4 wow animate__animated animate__slideInRight">
+                        <div class="col-6 col-md-4">
+                            <img class="img-fluid rounded" src="{% static 'img/kitchen.jpg' %}" alt="">
+                        </div>
+                        <div class="col-6 col-md-8">
+                            <ul class="list-inline m-0">
+                                <li class="py-2 border-top border-bottom"><i class="fa fa-check text-primary mr-3"></i>Mehribon
+                                    tarbiyachilar
+                                </li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Shinam
+                                    yotoqxonalar
+                                </li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Mazali
+                                    taomlar
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Class Start -->
+    <div class="container-fluid pt-5" id="classes">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5 wow animate__animated animate__lightSpeedInLeft"><span class="px-2">Ommabop kurslar</span>
+                </p>
+                <h1 class="mb-4 wow animate__animated animate__bounceIn">Kichkintoylar uchun to'garaklar</h1>
+            </div>
+            <div class="row">
+                {% for paid_course in paid_courses %}
+                <div class="col-lg-4 mb-5 wow animate__animated animate__zoomIn">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" src="media/{{ paid_course.image }}" alt="">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{ paid_course.title }}</h4>
+                            <p class="card-text">{{ paid_course.description }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent py-4 px-5">
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>Joylar soni</strong></div>
+                                <div class="col-6 py-1">{{ paid_course.seats }} o'rin</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>To'garak vaqti</strong></div>
+                                <div class="col-6 py-1">{{ paid_course.time }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 py-1 text-right border-right"><strong>Narxi (oyiga)</strong></div>
+                                <div class="col-6 py-1">{{ paid_course.money }} so'm</div>
+                            </div>
+                        </div>
+                        <a href="tel:{{ paid_course.phone_number }}" class="btn btn-primary px-4 mx-auto mb-4">Ro'yxatdan
+                            o'tish</a>
+                    </div>
+                </div>
+                {% endfor %}
+                <!--            <div class="col-lg-4 mb-5 wow animate__animated animate__slideInLeft">-->
+                <!--                <div class="card border-0 bg-light shadow-sm pb-2">-->
+                <!--                    <img class="card-img-top mb-2" src="{% static 'img/class-1.jpg' %}" alt="">-->
+                <!--                    <div class="card-body text-center">-->
+                <!--                        <h4 class="card-title">Chet tili</h4>-->
+                <!--                        <p class="card-text">Farzandingiz kelajakda yetuk mutaxassis bo'lishi uchun zarur bo'lgan chet-->
+                <!--                            tillarini hozirdanoq o'rgatamiz</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="card-footer bg-transparent py-4 px-5">-->
+                <!--                        <div class="row border-bottom">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>Joylar soni</strong></div>-->
+                <!--                            <div class="col-6 py-1">30 o'rin</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="row border-bottom">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>To'garak vaqti</strong></div>-->
+                <!--                            <div class="col-6 py-1">08:00 - 10:00</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="row">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>Narxi (oyiga)</strong></div>-->
+                <!--                            <div class="col-6 py-1">500 000 so'm</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <a href="tel:+998991035505" class="btn btn-primary px-4 mx-auto mb-4">Ro'yxatdan o'tish</a>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            -->
+                <!--            <div class="col-lg-4 mb-5 wow animate__animated animate__slideInUp">-->
+                <!--                <div class="card border-0 bg-light shadow-sm pb-2">-->
+                <!--                    <img class="card-img-top mb-2" src="{% static 'img/class-2.jpg' %}" alt="">-->
+                <!--                    <div class="card-body text-center">-->
+                <!--                        <h4 class="card-title">Mental arifmetika</h4>-->
+                <!--                        <p class="card-text">Bolajonlarning aqliy salohiyatini rivojlantirish uchun ushbu to'garak joriy-->
+                <!--                            etilgan</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="card-footer bg-transparent py-4 px-5">-->
+                <!--                        <div class="row border-bottom">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>Joylar soni</strong></div>-->
+                <!--                            <div class="col-6 py-1">30 o'rin</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="row border-bottom">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>To'garak vaqti</strong></div>-->
+                <!--                            <div class="col-6 py-1">08:00 - 10:00</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="row">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>Narxi (oyiga)</strong></div>-->
+                <!--                            <div class="col-6 py-1">500 000 so'm</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <a href="tel:+998991035505" class="btn btn-primary px-4 mx-auto mb-4">Ro'yxatdan o'tish</a>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="col-lg-4 mb-5 wow animate__animated animate__slideInRight">-->
+                <!--                <div class="card border-0 bg-light shadow-sm pb-2">-->
+                <!--                    <img class="card-img-top mb-2" src="{% static 'img/class-3.jpg' %}" alt="">-->
+                <!--                    <div class="card-body text-center">-->
+                <!--                        <h4 class="card-title">Badiiy gimnastika</h4>-->
+                <!--                        <p class="card-text">Bolajonlarni har tomonlama barkamol bo'lishi uchun ushbu sport-->
+                <!--                            to'garaklarini doimiy ravishda olib boramiz</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="card-footer bg-transparent py-4 px-5">-->
+                <!--                        <div class="row border-bottom">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>Joylar soni</strong></div>-->
+                <!--                            <div class="col-6 py-1">30 o'rin</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="row border-bottom">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>To'garak vaqti</strong></div>-->
+                <!--                            <div class="col-6 py-1">08:00 - 10:00</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="row">-->
+                <!--                            <div class="col-6 py-1 text-right border-right"><strong>Narxi (oyiga)</strong></div>-->
+                <!--                            <div class="col-6 py-1">500 000 so'm</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <a href="tel:+998991035505" class="btn btn-primary px-4 mx-auto mb-4">Ro'yxatdan o'tish</a>-->
+                <!--                </div>-->
+                <!--            </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Class End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid pt-5" id="team">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5 wow animate__animated animate__slideInLeft"><span
+                        class="px-2">Bizning guruh</span></p>
+                <h1 class="mb-4 wow animate__animated animate__bounceIn">Jamoamiz bilan tanishing</h1>
+            </div>
+            <div class="row">
+                {% for jamoa in jamoamiz %}
+                <div class="col-md-6 col-lg-3 text-center team mb-5 wow animate__animated animate__zoomIn">
+                    <div class="position-relative overflow-hidden mb-4"
+                         style="border-radius: 100%; width: 250px; height: 250px; display: block; margin: 0 auto;">
+                        <img class="img-fluid w-100" src="media/{{ jamoa.rasmi }}" alt="">
+                        <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                               href="tel:{{ jamoa.telefon_raqami }}" target="_blank"><i class="fas fa-phone"></i>
+                                <a class="btn btn-outline-light text-center mr-2 px-0"
+                                   style="width: 38px; height: 38px;"
+                                   href="{{ jamoa.telegram_manzili }}" target="_blank"><i class="fab fa-telegram"></i></a>
+                                <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                   href="{{ jamoa.instagram_manzili }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <h4>{{ jamoa.ism_familiyasi }}</h4>
+                    <i>{{ jamoa.lavozimi }}</i>
+                </div>
+                {% endfor %}
+                <!--            -->
+                <!--            <div class="col-md-6 col-lg-3 text-center team mb-5 wow animate__animated animate__zoomIn">-->
+                <!--                <div class="position-relative overflow-hidden mb-4"-->
+                <!--                     style="border-radius: 100%; width: 250px; height: 250px; display: block; margin: 0 auto;">-->
+                <!--                    <img class="img-fluid w-100" src="{% static 'img/ceo.png' %}" alt="">-->
+                <!--                    <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-telegram"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-facebook-f"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-instagram"></i></a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <h4>Xazratkulova Feruza</h4>-->
+                <!--                <i>Direktor</i>-->
+                <!--            </div>-->
+                <!--            <div class="col-md-6 col-lg-3 text-center team mb-5 wow animate__animated animate__zoomIn">-->
+                <!--                <div class="position-relative overflow-hidden mb-4"-->
+                <!--                     style="border-radius: 100%;  width: 250px; height: 250px; display: block; margin: 0 auto;">-->
+                <!--                    <img class="img-fluid w-100" src="{% static 'img/mudir.jpg' %}" alt="">-->
+                <!--                    <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-telegram"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-facebook-f"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-instagram"></i></a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <h4>Adilova Dilshoda</h4>-->
+                <!--                <i>Xo'jalik mudiri</i>-->
+                <!--            </div>-->
+                <!--            <div class="col-md-6 col-lg-3 text-center team mb-5 wow animate__animated animate__zoomIn">-->
+                <!--                <div class="position-relative overflow-hidden mb-4"-->
+                <!--                     style="border-radius: 100%;  width: 250px; height: 250px; display: block; margin: 0 auto;">-->
+                <!--                    <img class="img-fluid w-100" src="{% static 'img/hamshira.jpg' %}" alt="">-->
+                <!--                    <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-telegram"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-facebook-f"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-instagram"></i></a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <h4>Odilova Hulkar</h4>-->
+                <!--                <i>Hamshira</i>-->
+                <!--            </div>-->
+                <!--            <div class="col-md-6 col-lg-3 text-center team mb-5 wow animate__animated animate__zoomIn">-->
+                <!--                <div class="position-relative overflow-hidden mb-4"-->
+                <!--                     style="border-radius: 100%;  width: 250px; height: 250px; display: block; margin: 0 auto;">-->
+                <!--                    <img class="img-fluid w-100" src="{% static 'img/uslubchi.jpg' %}" alt="">-->
+                <!--                    <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-telegram"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-facebook-f"></i></a>-->
+                <!--                        <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"-->
+                <!--                           href="#"><i class="fab fa-instagram"></i></a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <h4>Sirajova Nigora</h4>-->
+                <!--                <i>Uslubchi</i>-->
+                <!--            </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5" id="comments">
+        <div class="container p-0">
+            <div class="text-center pb-2">
+                <p class="section-title px-5 wow animate__animated animate__slideInLeft"><span
+                        class="px-2">Fikrlar</span>
+                </p>
+                <h1 class="mb-4 wow animate__animated animate__bounceIn">Ota-onalar biz haqimizda nima deydi!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                {% for fikr in fikrlar %}
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                        {{ fikr.fikri }}
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="media/{{ fikr.rasmi }}"
+                             style="width: 70px; height: 70px;" alt="Image">
+                        <div class="pl-3">
+                            <h5>{{ fikr.ism_familiyasi }}</h5>
+                            <i>{{ fikr.lavozimi }}</i>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!--            <div class="testimonial-item px-3">-->
+                <!--                <div class="bg-light shadow-sm rounded mb-4 p-4">-->
+                <!--                    <h3 class="fas fa-quote-left text-primary mr-3"></h3>-->
+                <!--                    Men va oilamiz bu bog'chadan juda mamnunmiz! Farzandlarim ishonchli hamda mehribon qo'llarda.-->
+                <!--                </div>-->
+                <!--                <div class="d-flex align-items-center">-->
+                <!--                    <img class="rounded-circle" src="{% static 'img/testimonial-1.jpg' %}"-->
+                <!--                         style="width: 70px; height: 70px;" alt="Image">-->
+                <!--                    <div class="pl-3">-->
+                <!--                        <h5>Shohjahon Mirakov</h5>-->
+                <!--                        <i>Iqtisodchi</i>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="testimonial-item px-3">-->
+                <!--                <div class="bg-light shadow-sm rounded mb-4 p-4">-->
+                <!--                    <h3 class="fas fa-quote-left text-primary mr-3"></h3>-->
+                <!--                    Fikrimcha, Jizzaxdagi bu bog'cha eng zo'r va eng zamonaviy DMTM hisoblanadi.-->
+                <!--                </div>-->
+                <!--                <div class="d-flex align-items-center">-->
+                <!--                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" style="width: 70px; height: 70px;"-->
+                <!--                         alt="Image">-->
+                <!--                    <div class="pl-3">-->
+                <!--                        <h5>Xudoyberdi To'xliyev</h5>-->
+                <!--                        <i>Moliyachi</i>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="testimonial-item px-3">-->
+                <!--                <div class="bg-light shadow-sm rounded mb-4 p-4">-->
+                <!--                    <h3 class="fas fa-quote-left text-primary mr-3"></h3>-->
+                <!--                    Samimiy tarbiyachilardan juda xursandmiz.-->
+                <!--                </div>-->
+                <!--                <div class="d-flex align-items-center">-->
+                <!--                    <img class="rounded-circle" src="{% static 'img/testimonial-3.jpg' %}"-->
+                <!--                         style="width: 70px; height: 70px;" alt="Image">-->
+                <!--                    <div class="pl-3">-->
+                <!--                        <h5>Davronbek Mo'minjonov</h5>-->
+                <!--                        <i>Biznesmen</i>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="testimonial-item px-3">-->
+                <!--                <div class="bg-light shadow-sm rounded mb-4 p-4">-->
+                <!--                    <h3 class="fas fa-quote-left text-primary mr-3"></h3>-->
+                <!--                    Keyingi ishlarda ham muvaffaqiyat tilab qolaman.-->
+                <!--                </div>-->
+                <!--                <div class="d-flex align-items-center">-->
+                <!--                    <img class="rounded-circle" src="{% static 'img/testimonial-2.jpg' %}"-->
+                <!--                         style="width: 70px; height: 70px;" alt="Image">-->
+                <!--                    <div class="pl-3">-->
+                <!--                        <h5>Nargiza Egamberdiyeva</h5>-->
+                <!--                        <i>O'qituvchi</i>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                            </div>-->
+
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Registration Start -->
+    <div class="container-fluid py-5" id="register">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0 wow animate__animated animate__slideInLeft">
+                    <p class="section-title pr-5"><span class="pr-2">Buyurtma qiling</span></p>
+                    <h1 class="mb-4">Farzandingiz uchun joy band qiling</h1>
+                    <p>Bog'chamizda 7 nafar tajribali murabbiylar ishlaydi. Har bir guruh tarbiyachilari
+                        farzandingizning
+                        barkamol rivojlanishi uchun zarur bo'lgan barcha narsani biladilar va amalga oshiradilar. Ular
+                        ertaklarni o'qiydilar, qiziqarli darslar o'tkazadilar, qiziquvchan bolalarning barcha
+                        savollariga
+                        javob berishadi va bolangiz uchun faqat ijobiy va quvnoq kayfiyatni yaratadilar.</p>
+                    <ul class="list-inline m-0">
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Professional tarbiyachilar</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Mazmunli va foydali darslar</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Quvnoq kayfiyat</li>
+                    </ul>
+                    <a href="tel:+998991035505" class="btn btn-primary mt-4 py-2 px-4">Band qilish</a>
+                </div>
+                <div class="col-lg-5 wow animate__animated animate__slideInRight">
+                    <div class="card border-0">
+                        <div class="card-header bg-secondary text-center p-4">
+                            <h1 class="text-white m-0">Ro'yxatga yoziling</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Ismingiz"
+                                           required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control border-0 p-4" placeholder="E-mailingiz"
+                                           required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select border-0 px-4" style="height: 47px;">
+                                        <option selected>To'garakni tanlang</option>
+                                        <option value="1">Xorijiy tillar</option>
+                                        <option value="2">Mental arifmetika</option>
+                                        <option value="3">Badiiy gimnastika</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Yuborish
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+{% endblock %}
