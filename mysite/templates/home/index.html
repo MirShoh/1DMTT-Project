@@ -176,18 +176,18 @@
                 <h1 class="mb-4 wow animate__animated animate__bounceIn">Ota-onalar biz haqimizda nima deydi!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow animate__animated animate__zoomIn">
-                {% for fikr in fikrlar %}
+                {% for comment in comments %}
                 <div class="testimonial-item px-3">
                     <div class="bg-light shadow-sm rounded mb-4 p-4">
                         <h3 class="fas fa-quote-left text-primary mr-3"></h3>
-                        {{ fikr.fikri }}
+                        {{ comment.fikri }}
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="media/{{ fikr.rasmi }}"
+                        <img class="rounded-circle" src="media/{{ comment.rasmi }}"
                              style="width: 70px; height: 70px;" alt="Image">
                         <div class="pl-3">
-                            <h5>{{ fikr.ism_familiyasi }}</h5>
-                            <i>{{ fikr.lavozimi }}</i>
+                            <h5>{{ comment.ism_familiyasi }}</h5>
+                            <i>{{ comment.lavozimi }}</i>
                         </div>
                     </div>
                 </div>
